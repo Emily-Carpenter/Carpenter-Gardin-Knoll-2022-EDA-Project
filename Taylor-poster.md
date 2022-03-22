@@ -5,9 +5,13 @@ Kameron Knoll, Emily Carpenter, and Taylor Gardin <sup>1</sup>
 
 <sup>1</sup> Biosciences Department, Minnesota State University Moorhead
 
-### **Introduction**
+### Abstract
 
-some text
+-   3-5 bullet points
+
+-   10-15 words per bullet
+
+### **Introduction**
 
 ### **Methods**
 
