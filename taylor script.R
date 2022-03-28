@@ -10,4 +10,10 @@ popul_data <-
   print()
 
 popul_cattle <-
- 
+ read_excel("data/cattle data 2020.xlsx") %>% 
+  print()
+
+popul_wolves <-
+  read_excel("data/Wolf pop per county all MN Counties.xlsx") %>% 
+  print()
+
