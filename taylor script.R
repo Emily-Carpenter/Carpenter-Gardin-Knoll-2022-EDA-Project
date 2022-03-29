@@ -17,3 +17,9 @@ popul_wolves <-
   read_excel("data/Wolf pop per county all MN Counties.xlsx") %>% 
   print()
 
+all_data <-
+popul_data %>% 
+  left_join(popul_cattle) %>% 
+  left_join(popul_wolves)
+
+ggplot()
