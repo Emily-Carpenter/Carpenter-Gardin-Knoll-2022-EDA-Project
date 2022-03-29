@@ -48,6 +48,6 @@ counties_sf %>%
           color = "#D1E5F0", size = 0.05) +
   coord_sf(datum = NA) +
   labs(fill = "Ratio",
-       title = "Wolf to human density ratio")
+       title = "Wolf to Human Density Ratio")
 
 
