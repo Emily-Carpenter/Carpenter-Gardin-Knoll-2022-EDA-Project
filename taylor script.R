@@ -48,6 +48,27 @@ counties_sf %>%
           color = "#D1E5F0", size = 0.05) +
   coord_sf(datum = NA) +
   labs(fill = "Ratio",
-       title = "Wolf to Human Density Ratio")
+       subtitle = "Ratio of Wolf Density to Human Density",
+       title = "Prediction of Human-Wolf Conflict")
+
+counties_sf %>% 
+  filter(state_name == "Minnesota") %>%
+  mutate(
+    county = str_remove(county_name, " County"),
+    area = as.numeric(st_area(geometry) / 1000000)
+  ) %>% 
+  left_join(all_data, by = "county") %>% 
+  mutate(
+    cattle_density = n_cattle_calves / area,
+    wolf_density = n_wolves / area,
+    cattle_wolf_ratio = wolf_density/cattle_density
+  ) %>% 
+  ggplot() +
+  geom_sf(mapping = aes(fill = cattle_wolf_ratio),
+          color = "#D1E5F0", size = 0.05) +
+  coord_sf(datum = NA) +
+  labs(fill = "Ratio",
+       subtitle = "Ratio of Wolf Density to Cattle Density", 
+       title = "Prediction of Wolf Predation on Cattle")
 
 
